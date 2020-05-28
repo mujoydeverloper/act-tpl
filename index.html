@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <title></title>
+        <!-- 导航小图标 -->
+        <script src="//image.ledu.com/scripts/favicon.js"></script>
+        <!-- /导航小图标 -->
+        <link rel="stylesheet" href="./css/main.css?v=202005180000">
+    </head>
+<body>
+    <!-- topbar -->
+    <script type="text/javascript" src="//img1.ledu.com/source/js/base/topbar/ledu_topbar.js"></script>
+    <script type="text/javascript" src="//image.ledu.com/scripts/IETest.js"></script>
+    <div id="app" class="wrap" v-cloak></div>
+    <script src="//image.ledu.com/scripts/require/2.3.5/require.js" data-main="./js/main_index.js"></script>
+    <script type="text/javascript">
+        requirejs.config({
+            urlArgs: 'v=' + new Date().getTime() //开发时用
+            //urlArgs: 'v=20200402000' //上线后改更新版本
+        })
+    </script>
+</body>
+</html>
