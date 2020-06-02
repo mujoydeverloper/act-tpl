@@ -1,1 +1,8 @@
+@charset "utf-8";
 @import "reset";
+@import "layer";
+
+//隐藏VUE的双括号
+[v-cloak] {
+    display: none;
+}

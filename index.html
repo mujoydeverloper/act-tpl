@@ -1,21 +1,54 @@
+<!--
+ * @Author: fuweiyuan
+ * @Date: 2020-06-02 16:19:07
+ * @LastEditors: fuweiyuan
+ * @LastEditTime: 2020-06-02 19:35:29
+ * @Description: file content
+--> 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="renderer" content="webkit">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <title></title>
-        <!-- 导航小图标 -->
-        <script src="//image.ledu.com/scripts/favicon.js"></script>
-        <!-- /导航小图标 -->
-        <link rel="stylesheet" href="./css/main.css?v=202005180000">
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>活动标题</title>
+    <!-- 导航小图标 -->
+    <script src="//image.ledu.com/scripts/favicon.js"></script>
+    <!-- /导航小图标 -->
+    <link rel="stylesheet" href="//image.ledu.com/scripts/vant/2.5/index.css?v=202006021840">
+    <link rel="stylesheet" href="./css/main.css?v=202006021840">
+</head>
+
 <body>
-    <!-- topbar -->
+    <!-- 顶部通用 -->
     <script type="text/javascript" src="//img1.ledu.com/source/js/base/topbar/ledu_topbar.js"></script>
     <script type="text/javascript" src="//image.ledu.com/scripts/IETest.js"></script>
-    <div id="app" class="wrap" v-cloak></div>
+    <!-- /顶部通用 -->
+    <div id="app" class="wrap" v-cloak>
+        <!-- 活动内容 -->
+        <div class="wapper">
+            <a href="javascript:;" @click="fnLogin">登录</a>
+            <a href="javascript:;" @click="fnShowTips({content:'欢迎使用模板'})">通用弹窗</a>
+        </div>
+        <!-- /活动内容 -->
+        
+        <!-- 通用弹层 -->
+        <div class="fdtips layer1" v-show="layer1">
+            <a href="javascript:;" @click="fnCloseLayer" class="tipsclose"></a>
+            <h2 v-html="layertitle">提示信息</h2>
+            <div class="fdtipsbox">
+                <p v-html="layerhtml">提示内容</p>
+            </div>
+            <div class="fubtn">
+                <a href="javascript:;" @click="fnCloseLayer" class="fdtipsbtn">确定</a>
+            </div>
+        </div>
+        <div class="bodybg" v-show="bodybg"></div>
+        <!-- /通用弹层 -->
+    </div>
+    <!-- require入口文件 -->
     <script src="//image.ledu.com/scripts/require/2.3.5/require.js" data-main="./js/main_index.js"></script>
     <script type="text/javascript">
         requirejs.config({
@@ -23,5 +56,7 @@
             //urlArgs: 'v=20200402000' //上线后改更新版本
         })
     </script>
+    <!-- /require入口文件 -->
 </body>
+
 </html>

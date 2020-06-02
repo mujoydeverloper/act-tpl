@@ -1,0 +1,227 @@
+/** 弹出层默认样式设置 **/
+$fd-width:460px;
+$fd-height:280px;
+$fd-bg:#fff;
+$fd-border:3px solid #43485b;
+$fd-border-radius:10px;
+$font-color:#43485b;
+/** 弹出层标题设置 **/
+$h2-color:#43485b;
+$h2-size:30px;
+$h2-height:71px;
+$h2-bg:none;
+$h2-align:center;
+$h2-padding:0 0 0 10px;
+$h2-border-radius:0;
+$h2-border-bottom:1px solid #ccc;
+/** 弹出层内容设置 **/
+$fdtipsbox-height:115px;
+$fdtipsbox-padding:0 30px;
+$fdtipsbox-size:20px;
+$fdtipsbox-lineheight:1.5;
+/** 弹出层确认按钮设置 **/
+$fubtn-bottom:15px;
+$fdtipsbtn-font:16px;
+$fdtipsbtn-width:120px;
+$fdtipsbtn-height:37px;
+$fdtipsbtn-color:#fff;
+$fdtipsbtn-color-hover:#c12a02;
+$fdtipsbtn-bg:#ff4800;
+$fdtipsbtn-bg-hover:#ff5629;
+$fdtipsbtn-border:none;
+$fdtipsbtn-border-radius:5px;
+/** 弹出层返回按钮设置 **/
+$fdtipsbtn-no-border:1px solid #b3976d;
+$fdtipsbtn-no-bg:#fff;
+$fdtipsbtn-no-bg-hover:#e6c088;
+$fdtipsbtn-no-left:40px;
+$fdtipsbtn-no-color:#b3976d;
+$fdtipsbtn-no-color-hover:#b3976d;
+/** 弹出层关闭按钮设置 **/
+$tipsclose-width:40px;
+$tipsclose-height:48px;
+$tipsclose-top:0;
+$tipsclose-right:25px;
+$tipsclose-bg:url('../images/layer-close.png') no-repeat;
+$tipsclose-color:#ccc;
+$tipsclose-font-size:20px;
+/** 弹出层我的奖励设置 **/
+$fdjllist-padding:20px 10px 0 10px;
+$fdjllist-span-w1:35%;
+$fdjllist-span-w2:35%;
+$fdjllist-span-w3:30%;
+
+
+//弹层
+.fdtips {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: $fd-width;
+    height: $fd-height;
+    color: $font-color;
+    text-align: center;
+    margin: auto;
+    z-index: 1002;
+
+    &.layer1 {
+        border: $fd-border;
+        background: $fd-bg;
+        border-radius: $fd-border-radius;
+    }
+
+    //标题
+    h2 {
+        width: 100%;
+        box-sizing: border-box;
+        color: $h2-color;
+        font-size: $h2-size;
+        height: $h2-height;
+        line-height: $h2-height;
+        background: $h2-bg;
+        border-radius: $h2-border-radius;
+        text-align: $h2-align;
+        padding: $h2-padding;
+        border-bottom: $h2-border-bottom;
+    }
+
+    //确定按钮
+    .fubtn {
+        position: absolute;
+        bottom: $fubtn-bottom;
+        left: 0;
+        right: 0;
+        width: 100%;
+        margin: auto;
+
+        .fdtipsbtn {
+            display: inline-block;
+            width: $fdtipsbtn-width;
+            height: $fdtipsbtn-height;
+            line-height: $fdtipsbtn-height;
+            font-size: $fdtipsbtn-font;
+            background: $fdtipsbtn-bg;
+            border: $fdtipsbtn-border;
+            border-radius: $fdtipsbtn-border-radius;
+            color: $fdtipsbtn-color;
+
+            &:hover {
+                color: $fdtipsbtn-color-hover;
+                background: $fdtipsbtn-bg-hover;
+            }
+
+            &.no {
+                color: $fdtipsbtn-no-color;
+                border: $fdtipsbtn-no-border;
+                background: $fdtipsbtn-no-bg;
+                margin-left: $fdtipsbtn-no-left;
+                box-sizing: border-box;
+
+                &:hover {
+                    color: $fdtipsbtn-no-color-hover;
+                    background: $fdtipsbtn-no-bg-hover;
+                }
+            }
+        }
+    }
+
+    //表情及提示语
+    .fdtipsbox {
+        position: absolute;
+        top: $h2-height+5;
+        width: $fd-width;
+        height: $fdtipsbox-height;
+        color: $font-color;
+        display: table;
+
+        p {
+            font-size: $fdtipsbox-size;
+            padding: $fdtipsbox-padding;
+            line-height: $fdtipsbox-lineheight;
+            height: 100%;
+            display: table-cell;
+            vertical-align: middle;           
+        }
+    }
+
+    //关闭按钮
+    .tipsclose {
+        position: absolute;
+        top: $tipsclose-top;
+        right: $tipsclose-right;
+        width: $tipsclose-width;
+        height: $tipsclose-height;
+        line-height: $tipsclose-height;
+        color: $tipsclose-color;
+        background: $tipsclose-bg;
+        display: block;
+        z-index: 10;
+        font-size: $tipsclose-font-size;
+        text-decoration: none;
+    }
+
+    //我的奖励
+    .fdjllist {
+        padding: $fdjllist-padding;
+
+        .fdjlisttitle {
+            span {
+                display: inline-block;
+                text-align: center;
+                font-weight: bold;
+
+                &.w1 {
+                    width: $fdjllist-span-w1;
+                }
+
+                &.w2 {
+                    width: $fdjllist-span-w2;
+                }
+
+                &.w3 {
+                    width: $fdjllist-span-w3;
+                }
+            }
+        }
+
+        ul {
+            line-height: 25px;
+
+            li {
+                margin-top: 10px;
+
+                span {
+                    display: inline-block;
+                    text-align: center;
+
+                    &.w1 {
+                        width: $fdjllist-span-w1;
+                    }
+
+                    &.w2 {
+                        width: $fdjllist-span-w2;
+                    }
+
+                    &.w3 {
+                        width: $fdjllist-span-w3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//遮罩层
+.bodybg {
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+    background: #000;
+}
+
