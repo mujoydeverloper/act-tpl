@@ -73,7 +73,7 @@ define([
                     _this.face_logo = res.face_logo;
                     _this.act_flag = res.act_flag;
                     /*********************/
-
+                    console.log(hdsdk.js)
                 } else {
                     vant.Toast({
                         message: data.msg,

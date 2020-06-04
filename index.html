@@ -2,9 +2,9 @@
  * @Author: fuweiyuan
  * @Date: 2020-06-02 16:19:07
  * @LastEditors: fuweiyuan
- * @LastEditTime: 2020-06-02 19:35:29
+ * @LastEditTime: 2020-06-04 13:40:22
  * @Description: file content
---> 
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,23 +17,25 @@
     <!-- 导航小图标 -->
     <script src="//image.ledu.com/scripts/favicon.js"></script>
     <!-- /导航小图标 -->
-    <link rel="stylesheet" href="//image.ledu.com/scripts/vant/2.5/index.css?v=202006021840">
-    <link rel="stylesheet" href="./css/main.css?v=202006021840">
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <!-- 顶部通用 -->
     <script type="text/javascript" src="//img1.ledu.com/source/js/base/topbar/ledu_topbar.js"></script>
-    <script type="text/javascript" src="//image.ledu.com/scripts/IETest.js"></script>
     <!-- /顶部通用 -->
-    <div id="app" class="wrap" v-cloak>
+    <div id="app" v-cloak>
         <!-- 活动内容 -->
         <div class="wapper">
             <a href="javascript:;" @click="fnLogin">登录</a>
             <a href="javascript:;" @click="fnShowTips({content:'欢迎使用模板'})">通用弹窗</a>
         </div>
         <!-- /活动内容 -->
-        
+
         <!-- 通用弹层 -->
         <div class="fdtips layer1" v-show="layer1">
             <a href="javascript:;" @click="fnCloseLayer" class="tipsclose"></a>
