@@ -5,6 +5,7 @@ define([
     'AMF',
     'weburl',
     'hdsdk',
+    'imsdk',
     'login',
     'cnzz'
 ], function ($, Vue, vant, AMF, weburl) {

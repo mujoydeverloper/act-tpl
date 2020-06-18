@@ -11,7 +11,6 @@ requirejs.config({
         /*******************/
 
         /***内部共用模块***/
-        ledu_topbar: im1_url + 'source/js/base/topbar/ledu_topbar',//乐都顶部通栏
         login: im1_url + 'source/js/base/loginEject',//登录 文档地址：https://quqi.com/6/277793
         LDpaylayer: 'ledu/LDpaylayer/LDpaylayer', //支付宝，微信支付 文档地址：https://quqi.com/6/272366
         cnzz: 'ledu/cnzzsdk/cnzz',//友盟统计上报 文档地址：https://quqi.com/6/278578
@@ -36,7 +35,7 @@ requirejs.config({
     },
     shim: {
         main: {
-            deps: ['ledu_topbar', 'IETest', 'css!' + hddir + '/css/main']
+            deps: ['IETest', 'css!' + hddir + '/css/main']
         },
         vant: {
             deps: ['vue', 'css!' + image_url + 'scripts/vant/2.5/index']
