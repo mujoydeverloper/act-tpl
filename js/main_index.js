@@ -16,8 +16,9 @@ requirejs.config({
         cnzz: 'ledu/cnzzsdk/cnzz',//友盟统计上报 文档地址：https://quqi.com/6/278578
         imsdk: 'ledu/imsdk/imsdk', // 客服入口文件
         hdsdk: 'ledu/hdsdk/hdsdk', // 活动通用上报模板 文档地址：https://quqi.com/6/279300        
+        sharesdk:'ledu/sharesdk/1.0.0/sharesdk', //分享模块 文档地址：https://quqi.com/6/278375
         AMF: 'scripts/common/AMF', // 活动共用方法
-        weburl: 'scripts/common/weburl', // 活动共用链接 
+        weburl: 'scripts/common/weburl', // 活动共用链接
         IETest: 'scripts/IETest', //判断浏览器，在加载主页面文件时，必须先调用
         /*******************/
 
@@ -39,6 +40,9 @@ requirejs.config({
         },
         vant: {
             deps: ['vue', 'css!' + image_url + 'scripts/vant/2.5/index']
+        },
+        sharesdk:{
+            deps:['jquery']
         }
     }
 });

@@ -24,8 +24,9 @@
     <div id="app" v-cloak>
         <!-- 活动内容 -->
         <div class="wapper">
-            <a href="javascript:;" @click="fnLogin">登录</a>
-            <a href="javascript:;" @click="fnShowTips({content:'欢迎使用模板'})">通用弹窗</a>
+            <van-button type="default" @click="fnLogin">登录</van-button>
+            <van-button type="default" @click="fnLogOut">退出登录</van-button>
+            <van-button type="default" @click="fnShowTips({content:'欢迎使用模板'})">通用弹窗</van-button>
         </div>
         <!-- /活动内容 -->
 

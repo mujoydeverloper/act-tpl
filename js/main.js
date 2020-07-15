@@ -15,15 +15,18 @@ define([
      * 如果需要使用VANT组件，首先需要加载组件
      * 示例Loading组件：Vue.use(vant.Loading);
      */
+    //使用vant按钮组件
+    Vue.use(vant.Button);
+    //VUE初始化
     var vm = new Vue({
         el: "#app",
         data: {
             /********** 活动公用 **********/
             uid: 0,//用户ID
-            user_name: '',//用户
-            is_login: 0,//是否登录
-            face_logo: '',//用户头像
-            category: '月卡活动',//活动名称，用于友盟上报
+            user_name: '用户名',//用户名
+            is_login: 0,//登录状态
+            face_logo: '//img1.ledu.com/source/img/noavatar_middle.gif',//用户头像
+            category: '活动名称',//活动名称，用于友盟上报
             /********** 活动弹窗 **********/
             layertitle: '',
             layerhtml: '',
@@ -74,7 +77,6 @@ define([
                     _this.face_logo = res.face_logo;
                     _this.act_flag = res.act_flag;
                     /*********************/
-                    console.log(hdsdk.js)
                 } else {
                     vant.Toast({
                         message: data.msg,
@@ -119,27 +121,22 @@ define([
                 LDLogin({
                     is_reg: 0,
                     success: function (data) {
-                        //注册成功
-                        location.reload();
+                        //登录成功、刷新页面
+                        AMF.fnMyRefresh()
                     }
                 });
             },
             /**
-             * 记录页面PV\UV
+             * 退出登录
              */
-            fnDatarecord: function (action_id) {
+            fnLogOut: function () {
                 var _this = this;
-                var params = {
-                    action_id: action_id
-                }
-                hdsdk.fnAjaxjsonp(weburl.url + 'datarecord', function (data) {
-                    var error = data.error;
-                    if (!error) {
-                        console.log('上报成功')
+                hdsdk.fnLogout({
+                    success: function () {
+                        //退出成功、刷新页面
+                        AMF.fnMyRefresh()
                     }
-                }, function () {
-                    console.log('没有返回任何数据')
-                }, params)
+                });
             },
             /**
              * 友盟上报
