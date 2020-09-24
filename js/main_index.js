@@ -1,6 +1,6 @@
 var image_url = '//image.ledu.com/',
     im1_url = '//img1.ledu.com/',
-    hddir = '/ledu/zt/2020/{{projectName}}'; //项目目录
+    hddir = 'ledu/zt/2020/{{projectName}}'; //项目目录
 requirejs.config({
     baseUrl: image_url,
     paths: {
