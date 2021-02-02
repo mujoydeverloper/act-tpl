@@ -17,6 +17,10 @@ define([
      */
     //使用vant按钮组件
     Vue.use(vant.Button);
+    // 接口域名地址
+    var baseUrl = location.host === 'pre-huodong.ledu.com' ? '//pre-api-huodong.ledu.com' : '//apihuodong.ledu.com'
+    // 具体活动地址
+    var sAct_url = baseUrl + '/activity/v1.1'
     //VUE初始化
     var vm = new Vue({
         el: "#app",
